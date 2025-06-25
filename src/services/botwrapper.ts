@@ -221,7 +221,7 @@ await this.Chatwoot.sendMessageAttachment(
   QrCodePath,  // ✅ esto es un path local válido
   "incoming",
   false,
-  null,
+  null, 
   "Chat_BOT"
 );
     });
