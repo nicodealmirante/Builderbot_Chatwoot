@@ -46,7 +46,7 @@ Compila el proyecto usando Rollup como empaquetador de módulos. Esto prepara la
 - `CHATWOOT_API_ACCESS_TOKEN`: Token de acceso para autenticar con la API de Chatwoot.
 - `PORT`: Puerto en el que se ejecutará la aplicación.
 
-Asegúrate de configurar estas variables en tu archivo `.env` antes de iniciar la aplicación.
+Copia el archivo `.env.example` a `.env` y configura estas variables antes de iniciar la aplicación.
 
 ## Documentation
 

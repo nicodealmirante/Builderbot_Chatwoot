@@ -279,7 +279,7 @@ class Chatwoot_Client {
    * - Obtiene el ID del usuario a partir del número de teléfono.
    * - Si no existe un ID de usuario, crea un nuevo contacto con el nombre y número de teléfono proporcionados.
    * - Obtiene los atributos del usuario a partir del número de teléfono.
-   * - Si no existen atributos para el usuario, crea un nuevo atributo llamado "funciones_del_bot" con el valor "ON".
+   * - Si no existen atributos para el usuario, crea un nuevo atributo llamado "funciones_del_bot" con el valor "OFF".
    * - Obtiene el ID de la conversación del usuario a partir del ID de usuario.
    * - Si no existe un ID de conversación, crea una nueva conversación con el ID de origen y el ID de usuario proporcionados.
    *
