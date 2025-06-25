@@ -207,19 +207,23 @@ export class BotWrapper {
     this.BotInstance.provider.on("require_action", async () => {
       //espere unos segundos antes de enviar la respuesta
       await new Promise((resolve) => setTimeout(resolve, 3000));
-      const QrCode = join(process.cwd(), "bot.qr.png");
-      if (!QrCode) {
-        return;
-      }
-      return await this.Chatwoot.sendMessageAttachment(
-        process.env.PHONE_QR,
-        "Escanea el código QR para iniciar sesión",
-        QrCode,
-        "incoming",
-        false,
-        null,
-        "Chat_BOT"
-      );
+
+const fs = require("fs");
+const QrCodePath = join(process.cwd(), "bot.qr.png");
+
+if (!fs.existsSync(QrCodePath)) return;
+
+const qrBuffer = fs.readFileSync(QrCodePath);
+
+await this.Chatwoot.sendMessageAttachment(  
+  process.env.PHONE_QR,
+  "Escanea el código QR para iniciar sesión",
+  QrCodePath,  // ✅ esto es un path local válido
+  "incoming",
+  false,
+  null,
+  "Chat_BOT"
+);
     });
 
     this.BotInstance.provider.on("ready", async (data) => {
